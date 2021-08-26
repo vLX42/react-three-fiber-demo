@@ -3,9 +3,9 @@ import { Canvas, useFrame } from '@react-three/fiber'
 import Layout from '../components/Layout'
 import { OrbitControls } from '@react-three/drei'
 
-const Box = (props) => {
+const Box = (props: any) => {
 
-  const mesh = useRef()
+  const mesh = useRef<THREE.Mesh>()
 
   const [active, setActive] = useState(false)
   useFrame((state, delta) => (mesh.current.rotation.y += 0.01))

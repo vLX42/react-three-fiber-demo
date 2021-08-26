@@ -37,9 +37,9 @@ const TorusShaderMaterial = {
 };
 
 
-const Box = (props) => {
+const Box = (props: any) => {
   const colorMap = useLoader(THREE.TextureLoader, "/borg.jpeg");
-  const mesh = useRef();
+  const mesh = useRef<THREE.Mesh>();
 
   const [active, setActive] = useState(false);
   useFrame((state, delta) => (mesh.current.rotation.y += 0.01));

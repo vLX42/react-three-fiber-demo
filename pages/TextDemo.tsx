@@ -2,6 +2,7 @@ import React, { useEffect, useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import Layout from "../components/Layout";
 import { OrbitControls, useTexture, Text, Reflector } from "@react-three/drei";
+import { Vector2 } from "three";
 
 function VideoText({ ...props }) {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -55,7 +56,7 @@ function Ground() {
           metalness={0.4}
           roughnessMap={floor}
           normalMap={normal}
-          normalScale={[1, 1]}
+          normalScale={new Vector2(1, 1) }
           {...props}
         />
       )}

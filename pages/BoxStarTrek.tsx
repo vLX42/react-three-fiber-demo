@@ -5,9 +5,9 @@ import Layout from "../components/Layout";
 import Form from "../components/Form";
 import { OrbitControls, Text, Stars, Html } from "@react-three/drei";
 
-const Box = (props) => {
+const Box = (props:any) => {
   const colorMap = useLoader(THREE.TextureLoader, "/borg.jpeg");
-  const mesh = useRef();
+  const mesh = useRef<THREE.Mesh>();
 
   const [active, setActive] = useState(false);
   useFrame((state, delta) => (mesh.current.rotation.y += 0.005));
