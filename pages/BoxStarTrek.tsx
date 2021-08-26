@@ -22,7 +22,7 @@ const Box = (props:any) => {
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial map={colorMap} />
       <>
-      {/* <Html
+      <Html
         style={{
           transition: "all 0.2s",
           opacity: 1,
@@ -34,7 +34,7 @@ const Box = (props:any) => {
         occlude
       >
         <Form />
-      </Html> */}
+      </Html>
       </>
     </mesh>
   );

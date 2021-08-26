@@ -2,7 +2,7 @@ import React, { useEffect, useState, Suspense } from "react";
 import { Canvas } from "@react-three/fiber";
 import Layout from "../components/Layout";
 import { OrbitControls, useTexture, Text, Reflector } from "@react-three/drei";
-import { Vector2 } from "three";
+import { Vector2, sRGBEncoding } from "three";
 
 function VideoText({ ...props }) {
   const [videoLoaded, setVideoLoaded] = useState(false);
@@ -25,11 +25,11 @@ function VideoText({ ...props }) {
     >
       Digital Freight
       <meshBasicMaterial toneMapped={false}>
-        {/* <videoTexture
+        <videoTexture
           attach="map"
           args={[video]}
-          encoding={THREE.sRGBEncoding}
-        /> */}
+          encoding={sRGBEncoding}
+        />
       </meshBasicMaterial>
     </Text>
   );

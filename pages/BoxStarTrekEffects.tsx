@@ -57,7 +57,7 @@ const Box = (props: any) => {
       onClick={(event) => setActive(!active)}
     >
       <boxGeometry args={[1, 1, 1]} />
-      {/* <torusGeometry args={[1.8, 1.2, 48, 64]} /> */}
+      <torusGeometry args={[1.8, 1.2, 48, 64]} />
       <meshStandardMaterial map={colorMap} />
     </mesh>
     </EffectComposer>
