@@ -1,7 +1,5 @@
 import { TextField, Checkbox } from "@dfds-ui/forms";
-import { AddressSelect, GooglePlacesAPIProvider } from "@dfds-ui/google-places";
-import { Button, ButtonStack } from "@dfds-ui/react-components";
-import { NativeSelectField } from "@dfds-ui/forms";
+import { Button, ButtonStack } from "@dfds-ui/react-components"
 import { SelectField } from "@dfds-ui/forms/select-field/SelectField";
 import { useForm, Controller } from "react-hook-form";
 
