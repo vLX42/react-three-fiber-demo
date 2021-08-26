@@ -26,7 +26,7 @@ const Box = (props:any) => {
         style={{
           transition: "all 0.2s",
           opacity: 1,
-          transform: 0.5,
+          transform: '0.5',
         }}
         distanceFactor={1.5}
         position={[0, 0, 0.51]}
