@@ -11,10 +11,9 @@ import {
   Vignette,
 } from "@react-three/postprocessing";
 
-
 const TorusShaderMaterial = {
   uniforms: {
-    u_time: { type: "f", value: 0 }
+    u_time: { type: "f", value: 0 },
   },
   vertexShader: `
     precision mediump float;
@@ -33,9 +32,8 @@ const TorusShaderMaterial = {
       float cb = floor((uv.x + u_time) * 40.);
       gl_FragColor = vec4(mod(cb, 2.0),0.,0.,1.);
     }
-  `
+  `,
 };
-
 
 const Box = (props: any) => {
   const colorMap = useLoader(THREE.TextureLoader, "/borg.jpeg");
@@ -46,30 +44,37 @@ const Box = (props: any) => {
 
   return (
     <EffectComposer multisampling={0} disableNormalPass={true}>
-    <DepthOfField focusDistance={20} focalLength={0.02} bokehScale={2} height={480} />
-    <Bloom luminanceThreshold={0} luminanceSmoothing={0.002 } height={300} opacity={3} />
-    <Noise opacity={.25} />
-    <Vignette eskil={false} offset={0.1} darkness={1.1} />
-    <mesh
-      {...props}
-      ref={mesh}
-      scale={active ? 1.5 : 1}
-      onClick={(event) => setActive(!active)}
-    >
-      <boxGeometry args={[1, 1, 1]} />
-      <torusGeometry args={[1.8, 1.2, 48, 64]} />
-      <meshStandardMaterial map={colorMap} />
-    </mesh>
+      <DepthOfField
+        focusDistance={20}
+        focalLength={0.02}
+        bokehScale={2}
+        height={480}
+      />
+      <Bloom
+        luminanceThreshold={0}
+        luminanceSmoothing={0.01}
+        height={300}
+        opacity={3}
+      />
+      <Noise opacity={0.15} />
+      <Vignette eskil={false} offset={0.1} darkness={1.1} />
+      <mesh
+        {...props}
+        ref={mesh}
+        scale={active ? 1.5 : 1}
+        onClick={(event) => setActive(!active)}
+      >
+        <boxGeometry args={[1, 1, 1]} />
+         <torusGeometry args={[1.8, 1.2, 48, 64]} /> 
+
+      </mesh>
     </EffectComposer>
   );
 };
 const BoxStarTrek = () => (
   <Layout title="Home | Box">
-    <Canvas
-      shadows
-      style={{ height: "calc(100vh - 100px)" }}
-    >
-      <color attach="background" args={['black']} />
+    <Canvas shadows style={{ height: "calc(100vh - 100px)" }}>
+      <color attach="background" args={["black"]} />
       <ambientLight />
       <OrbitControls />
       <pointLight position={[10, 10, 10]} />

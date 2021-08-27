@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 import Form from "../components/Form";
 import { OrbitControls, Text, Stars, Html } from "@react-three/drei";
 
-const Box = (props:any) => {
+const Box = (props: any) => {
   const colorMap = useLoader(THREE.TextureLoader, "/borg.jpeg");
   const mesh = useRef<THREE.Mesh>();
 
@@ -22,7 +22,7 @@ const Box = (props:any) => {
       <boxGeometry args={[1, 1, 1]} />
       <meshStandardMaterial map={colorMap} />
       <>
-      <Html
+         <Html
         style={{
           transition: "all 0.2s",
           opacity: 1,
@@ -34,7 +34,7 @@ const Box = (props:any) => {
         occlude
       >
         <Form />
-      </Html>
+      </Html> 
       </>
     </mesh>
   );
